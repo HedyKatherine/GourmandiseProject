@@ -9,7 +9,7 @@
 // le tableau qui va contenir tout les prix d'article permettant de faire des calcules
 let arrayShoppingCart = [];
 let sum = 0;
-sum = parseFloat(sum.toFixed(2));
+// sum = parseFloat(sum.toFixed(2));
 // ajouter les articles dans le panier
 function addPriceToCart(prix, prod, id, img) {
   let shoppingCart = '<div id=item_'+ id +' class="cart-item d-flex justify-content-between text-capitalize my-3">' +
@@ -33,7 +33,7 @@ function addPriceToCart(prix, prod, id, img) {
     let price = parseFloat(prix);
       arrayShoppingCart.push(price);
       sum += price;
-      document.getElementById("total").innerHTML = sum;
+      document.getElementById("total").innerHTML = parseFloat(sum.toFixed(2));
       document.getElementById("totalPrice").innerHTML = "Total €:";
 
 }
