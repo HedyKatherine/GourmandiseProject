@@ -41,7 +41,8 @@ function addPriceToCart(prix, prod, id, img) {
 function emptyTrash(item_id){
   let removedItem = document.querySelector("#item_" + item_id + " > .item-text > .prod-title").innerHTML;
   let removedPrice = document.querySelector("#item_" + item_id + " > .item-text > .cart-item-price").innerHTML;
-  document.getElementById("total").innerHTML -= removedPrice; // décroitre la summe total quand un article est supprimé du panier
+  sum -= removedPrice;
+  document.getElementById("total").innerHTML = parseFloat(sum.toFixed(2));
   document.querySelector("#item_" + item_id).remove();
   alert("Voulez-vous supprimer l'article: " + removedItem + " ?");
   allRemoved(); // s'il n'y a plus d'articles dans le panier appeler la fonction allRemoved()
